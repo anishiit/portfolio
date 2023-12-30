@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+html , body {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+*::selection{
+    color: white;
+    background-color: black;
+}
+#main{
+    width: 100%;
+}
+#home{
+    width: 100%;
+    height: 100vh;
+}
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 50px;
+  
+}
+#nav h1{
+      font-family:'Courier New', Courier, monospace;
+}
+ .right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+#nav a{
+    text-decoration: none;
+    font-weight: 450;
+    color: black;
+    font-size: 1.3vw;
+
+}
+#home .homemain{
+    width: 100%;
+    padding: 15vw 15vw;
+}
+.homemain h3{
+    font-weight: 800;
+    font-size: 1.6vw;
+}
+.heading{
+    display: flex;
+    gap: 40px;
+}
+.homemain .heading h1{
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+    font-size: 7vw;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+.homelist{
+    padding: 5vw 15vw;
+}
+.homelist p{
+    width: 74%;
+    font-size: 1.5vw;
+    font-weight: 400;
+    letter-spacing: -.08vw;
+}
+.homelist p::selection{
+    color: white;
+    background-color: black;
+}
+
+.homemain .heading h1:hover{
+    color: black;
+}
+#featured{
+    padding: 10vw 15vw;
+}
+
+.fheading{
+    margin-top: 50px;
+}
+.fheading h1{
+    line-height: 1;
+    font-size: 4vw;
+    font-weight: 400;
+}
+.fheading>h1:nth-child(2){
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+}
+#fimages{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    margin-top: 5vw;
+   
+}
+.fleft{
+    overflow: hidden;
+    width: 45%;
+    height: inherit;
+}
+.fleftelem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+}
+.fleftelem h1{
+    font-size: 2.5vw;
+    line-height: 1;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 1.5vw 0;
+}
+
+.fleftelem h4{
+    opacity: 0.5;
+}
+.fleftelem h3{
+    font-weight: 400;
+     font-size: 1.3vw;
+}
+.fright{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 45%;    
+    height: inherit;
+    
+}
+.fright .images{
+    width: 90%;
+    height: 90%;
+}
+.fright .images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#btn1{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#btn1 button{
+ padding: 1.3vw 2.5vw;
+ border-radius: 100px;
+ border: 1px solid gray;
+ background-color: white;
+ font-size: 1vw;
+ font-weight: 500;
+ 
+}
+#dev{
+    width: 100%;
+    padding: 0.3vw 15vw;
+}
+#dev h1{  
+    font-size: 3.8vw;
+    font-weight: 400;
+    width: 74%;
+    line-height: 1;
+}
+#dev p{
+    font-size: 1.4vw;
+    margin-top: 3vw;
+    letter-spacing: -0.3px;
+    width: 74%;
+}
+#slides{
+    padding: 3vw 10vw;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.slides {
+width: 30%;
+}
+.slides:hover{
+    border: 2px solid #f7f7f7;
+    border-radius: 10px;
+    
+}
+.slides .img{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.slides .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover ;
+}
+.slides .tag{
+    width: fit-content;
+    border-radius: 100px;
+    padding: 10px 22px;
+    background-color: #f7f7f7;
+    margin: 20px 0;
+}
+.slides h3{
+    font-size: 1.3vw;
+    font-weight: 400;
+    margin-top: 0vw;
+    letter-spacing: -0.3px;
+}
+#education{
+   width: 100%;
+
+}
+.data{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-around;
+    z-index: -1;
+    position:relative;
+    top: 250px;
+}
+.iit{
+    position:relative;
+    top: 200px;
+}
+.data .iit h1{
+    z-index: -1;
+    font-weight: 600;
+    font-size: 80px;
+    font-family: gilroy;
+}
+.dataImg img{
+    width: 100%;
+    
+}
+ .sbtn{
+    margin-top: 10px;
+   }
+
+
+
+ /* From uiverse.io by @alexruix */
+.input {
+    display: flex;
+    flex-direction: column;
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+   }
+   
+   .input:focus, input:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #7a9cc6;
+   }
+   
+   .input::placeholder {
+    color: #777;
+   }
+   
+   .input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
+   
+   .myData{
+    font-family: gilroy;
+   }
+   .myData h4{
+    font-weight: 500;
+    font-size: 18px;
+   }
+   
+   
+   /*responsiv */
+
+   @media screen and (max-width:414px) {
+    #home{
+        width: 100%;
+        height: 40vh;
+    }
+    #nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px 20px;
+      
+    }
+    #nav h1{
+          font-family:'Courier New', Courier, monospace;
+          
+    }
+     .right{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+    }
+    #nav a{
+        text-decoration: none;
+        font-weight: 450;
+        color: black;
+        font-size: 2.3vw;
+    
+    }
+    #home .homemain{
+        width: 100%;
+        padding: 15vw 15vw;
+    }
+    .homemain h3{
+        font-weight: 800;
+        font-size: 2.6vw;
+    }
+    .heading{
+        display: flex;
+        gap: 20px;
+    }
+    .homemain .heading h1{
+        color: transparent;
+        -webkit-text-stroke: 1px black;
+        font-size: 9vw;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -3px;
+    }
+    .homelist{
+        padding: 5vw 15vw;
+    }
+    .homelist p{
+        width: 89%;
+        font-size: 2.5vw;
+        font-weight: 400;
+        letter-spacing: -.08vw;
+    }
+  
+   
+
+
+  #featured{
+    padding: 0vw 15vw;
+}
+
+.fheading{
+    margin-top: 50px;
+}
+.fheading h1{
+    line-height: 1;
+    font-size: 4vw;
+    font-weight: 400;
+}
+.fheading>h1:nth-child(2){
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+}
+#fimages{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50vh;
+    margin-top: 5vw;
+   
+}
+.fleft{
+    overflow: hidden;
+    width: 45%;
+    height: inherit;
+}
+.fleftelem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+}
+.fleftelem h1{
+    font-size: 2.5vw;
+    line-height: 1;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 1.5vw 0;
+}
+
+.fleftelem h4{
+    opacity: 0.5;
+}
+.fleftelem h3{
+    font-weight: 400;
+     font-size: 1.3vw;
+}
+.fright{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 45%;    
+    height: 50vh;
+    
+}
+.fright .images{
+    width: 90%;
+    height: 90%;
+}
+.fright .images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+   }
