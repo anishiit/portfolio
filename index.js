@@ -1,3 +1,4 @@
+alert("js is working");
 Shery.mouseFollower();
 Shery.makeMagnet(".magnet"); 
 Shery.hoverWithMediaCircle(".hvr",{
