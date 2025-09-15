@@ -2,19 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
 }
+
 html , body {
     width: 100%;
     height: 100%;
     scroll-behavior: smooth;
 }
+
+/* Ensure all images are responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 *::selection{
     color: white;
     background-color: black;
 }
 #main{
     width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 #home{
     width: 100%;
@@ -35,7 +43,27 @@ html , body {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.right .ri-menu-line {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Hidden by default, shown on mobile */
+}
+
+/* Show menu icon on mobile */
+@media screen and (max-width: 768px) {
+    .right .ri-menu-line {
+        display: block;
+    }
     
+    .right a {
+        display: none; /* Hide navigation links on mobile, you can modify this to show a mobile menu */
+    }
+    
+    .right a:first-child {
+        display: inline; /* Keep the download resume link visible */
+    }
 }
 #nav a{
     text-decoration: none;
@@ -263,23 +291,30 @@ width: 30%;
     background-color: transparent;
     color: #0d0c22;
     transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-   }
+    width: 100%;
+    max-width: 100%;
+}
    
-   .input:focus, input:hover {
+.input:focus, input:hover {
     outline: none;
     padding: .2rem 1rem;
     border-radius: 1rem;
     border-color: #7a9cc6;
-   }
+}
    
-   .input::placeholder {
+.input::placeholder {
     color: #777;
-   }
+}
    
-   .input:focus::placeholder {
+.input:focus::placeholder {
     opacity: 0;
     transition: opacity .3s;
-   }
+}
+
+.formData {
+    width: 100%;
+    max-width: 500px;
+}
    
    .myData{
     font-family: gilroy;
@@ -290,137 +325,371 @@ width: 30%;
    }
    
    
-   /*responsiv */
+/* Responsive Design */
 
-   @media screen and (max-width:414px) {
-    #home{
-        width: 100%;
-        height: 40vh;
+/* Tablet Styles (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+    #nav {
+        padding: 20px 30px;
     }
-    #nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 20px 20px;
-      
-    }
-    #nav h1{
-          font-family:'Courier New', Courier, monospace;
-          
-    }
-     .right{
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        
-    }
-    #nav a{
-        text-decoration: none;
-        font-weight: 450;
-        color: black;
-        font-size: 2.3vw;
     
+    #nav a {
+        font-size: 1.8vw;
     }
-    #home .homemain{
-        width: 100%;
-        padding: 15vw 15vw;
+    
+    #home .homemain {
+        padding: 12vw 10vw;
     }
-    .homemain h3{
-        font-weight: 800;
-        font-size: 2.6vw;
+    
+    .homemain h3 {
+        font-size: 2vw;
     }
-    .heading{
-        display: flex;
+    
+    .homemain .heading h1 {
+        font-size: 8vw;
+    }
+    
+    .homelist {
+        padding: 5vw 10vw;
+    }
+    
+    .homelist p {
+        width: 85%;
+        font-size: 1.8vw;
+    }
+    
+    #featured {
+        padding: 8vw 10vw;
+    }
+    
+    .fheading h1 {
+        font-size: 5vw;
+    }
+    
+    #dev {
+        padding: 0.3vw 10vw;
+    }
+    
+    #dev h1 {
+        font-size: 4.5vw;
+        width: 85%;
+    }
+    
+    #dev p {
+        font-size: 1.6vw;
+        width: 85%;
+    }
+    
+    #slides {
+        padding: 3vw 5vw;
+        flex-wrap: wrap;
         gap: 20px;
     }
-    .homemain .heading h1{
-        color: transparent;
-        -webkit-text-stroke: 1px black;
-        font-size: 9vw;
-        font-weight: 900;
-        line-height: 1;
-        letter-spacing: -3px;
-    }
-    .homelist{
-        padding: 5vw 15vw;
-    }
-    .homelist p{
-        width: 89%;
-        font-size: 2.5vw;
-        font-weight: 400;
-        letter-spacing: -.08vw;
-    }
-  
-   
-
-
-  #featured{
-    padding: 0vw 15vw;
-}
-
-.fheading{
-    margin-top: 50px;
-}
-.fheading h1{
-    line-height: 1;
-    font-size: 4vw;
-    font-weight: 400;
-}
-.fheading>h1:nth-child(2){
-    color: transparent;
-    -webkit-text-stroke: 1px black;
-}
-#fimages{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 50vh;
-    margin-top: 5vw;
-   
-}
-.fleft{
-    overflow: hidden;
-    width: 45%;
-    height: inherit;
-}
-.fleftelem{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: inherit;
-}
-.fleftelem h1{
-    font-size: 2.5vw;
-    line-height: 1;
-    font-weight: 400;
-    text-transform: capitalize;
-    margin: 1.5vw 0;
-}
-
-.fleftelem h4{
-    opacity: 0.5;
-}
-.fleftelem h3{
-    font-weight: 400;
-     font-size: 1.3vw;
-}
-.fright{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 45%;    
-    height: 50vh;
     
+    .slides {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+    
+    .slides h3 {
+        font-size: 1.5vw;
+    }
 }
-.fright .images{
-    width: 90%;
-    height: 90%;
+
+/* Mobile Styles (768px and below) */
+@media screen and (max-width: 768px) {
+    #nav {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+    
+    #nav h1 {
+        font-size: 20px;
+    }
+    
+    .right {
+        gap: 10px;
+    }
+    
+    #nav a {
+        font-size: 14px;
+    }
+    
+    #home {
+        height: auto;
+        min-height: 70vh;
+    }
+    
+    #home .homemain {
+        padding: 20vw 8vw 10vw;
+    }
+    
+    .homemain h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .heading {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .homemain .heading h1 {
+        font-size: 15vw;
+        letter-spacing: -1px;
+    }
+    
+    .homelist {
+        padding: 8vw;
+    }
+    
+    .homelist p {
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    #featured {
+        padding: 8vw;
+    }
+    
+    .fheading h1 {
+        font-size: 10vw;
+    }
+    
+    #fimages {
+        flex-direction: column;
+        height: auto;
+        margin-top: 8vw;
+    }
+    
+    .fleft {
+        width: 100%;
+        height: auto;
+        order: 2;
+    }
+    
+    .fleftelem {
+        height: auto;
+        padding: 30px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .fleftelem:last-child {
+        border-bottom: none;
+    }
+    
+    .fleftelem h1 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+    
+    .fleftelem h3 {
+        font-size: 16px;
+    }
+    
+    .fleftelem h4 {
+        font-size: 14px;
+    }
+    
+    .fright {
+        width: 100%;
+        height: 250px;
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    .fright .images {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #btn1 button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    #dev {
+        padding: 8vw;
+    }
+    
+    #dev h1 {
+        font-size: 8vw;
+        width: 100%;
+    }
+    
+    #dev p {
+        font-size: 16px;
+        width: 100%;
+        margin-top: 20px;
+        line-height: 1.5;
+    }
+    
+    #slides {
+        padding: 8vw;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .slides {
+        width: 100%;
+    }
+    
+    .slides h3 {
+        font-size: 16px;
+    }
+    
+    .slides .img {
+        height: 150px;
+    }
+    
+    #education {
+        padding: 8vw;
+    }
+    
+    .data {
+        flex-direction: column;
+        top: 50px;
+        gap: 30px;
+        align-items: stretch;
+    }
+    
+    .formData {
+        order: 1;
+        width: 100%;
+    }
+    
+    .formData h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .input {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    
+    .iit {
+        order: 3;
+        top: 0;
+        text-align: center;
+    }
+    
+    .data .iit h1 {
+        font-size: 40px;
+    }
+    
+    .myData {
+        order: 2;
+        margin: 20px 0;
+    }
+    
+    .myData h4 {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .dataImg {
+        margin-top: 30px;
+    }
+    
+    .dataImg img {
+        max-width: 100%;
+        height: auto;
+    }
 }
-.fright .images img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+/* Small Mobile Styles (480px and below) */
+@media screen and (max-width: 480px) {
+    #nav {
+        padding: 10px 15px;
+    }
+    
+    #nav h1 {
+        font-size: 18px;
+    }
+    
+    #nav a {
+        font-size: 12px;
+    }
+    
+    .right {
+        gap: 8px;
+    }
+    
+    #home .homemain {
+        padding: 25vw 6vw 15vw;
+    }
+    
+    .homemain h3 {
+        font-size: 16px;
+    }
+    
+    .homemain .heading h1 {
+        font-size: 18vw;
+    }
+    
+    .homelist {
+        padding: 6vw;
+    }
+    
+    .homelist p {
+        font-size: 14px;
+    }
+    
+    #featured {
+        padding: 6vw;
+    }
+    
+    .fheading h1 {
+        font-size: 12vw;
+    }
+    
+    .fleftelem h1 {
+        font-size: 20px;
+    }
+    
+    .fleftelem h3 {
+        font-size: 14px;
+    }
+    
+    #dev {
+        padding: 6vw;
+    }
+    
+    #dev h1 {
+        font-size: 10vw;
+    }
+    
+    #dev p {
+        font-size: 14px;
+    }
+    
+    #slides {
+        padding: 6vw;
+    }
+    
+    .slides h3 {
+        font-size: 14px;
+    }
+    
+    .slides .img {
+        height: 120px;
+    }
+    
+    #education {
+        padding: 6vw;
+    }
+    
+    .formData h1 {
+        font-size: 24px;
+    }
+    
+    .data .iit h1 {
+        font-size: 30px;
+    }
+    
+    .myData h4 {
+        font-size: 12px;
+    }
 }
-   }
